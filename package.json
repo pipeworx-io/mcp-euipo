@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-euipo",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "EUIPO MCP — EU trademarks, registered Community designs, and the shared reference registers the EUIPO publishes alongside them (euipo.europa.eu).",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-euipo": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "euipo"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-euipo.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/euipo",
   "pipeworx": {
-    "sourceHash": "v1-c96eaa568ac2776093ecda22cd5831242d2b8782f0184ab945dcc44101dd0b6f",
-    "sourceCommit": "722087a9bda73f85942e8f6bbfd598544cb0d490"
+    "mode": "gateway",
+    "slug": "euipo",
+    "gatewaySlug": "euipo",
+    "sourceHash": "v1-a7835e46c7b20c900999fe4e1fb15902ebfd277eed88be41f67231c44c07d395",
+    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
   }
 }
